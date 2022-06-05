@@ -13,13 +13,16 @@ std::string infx2pstfx(std::string inpt) {
             //res += " ";
         } else if (inpt[i] == '(') {
             stack1.push(inpt[i]);
-        } else if ((inpt[i] == '+' || inpt[i] == '-') && (stack1.get() != '/') && (stack1.get() != '*') && (stack1.get() != '+') && 
+        } else if ((inpt[i] == '+' || inpt[i] == '-') && (stack1.get() != '/') &&
+                   (stack1.get() != '*') && (stack1.get() != '+') &&
             (stack1.get() != '-')) {
             stack1.push(inpt[i]);
-        } else if ((inpt[i] == '*') && ((stack1.get() != '*') && (stack1.get() != '/') || (stack1.get() == '+') ||
+        } else if ((inpt[i] == '*') && ((stack1.get() != '*') &&
+                  (stack1.get() != '/') || (stack1.get() == '+') ||
             (stack1.get() == '-'))) {
             stack1.push(inpt[i]);
-        } else if ((inpt[i] == '/') && ((stack1.get() != '*') && (stack1.get() != '/') || (stack1.get() == '+') ||
+        } else if ((inpt[i] == '/') && ((stack1.get() != '*') &&
+                  (stack1.get() != '/') || (stack1.get() == '+') ||
             (stack1.get() == '-'))) {
             stack1.push(inpt[i]);
         } else if (inpt[i] == ')') {
